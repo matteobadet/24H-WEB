@@ -1,3 +1,7 @@
+<?php
+$json = file_get_contents('https://iutdijon.u-bourgogne.fr/intra/iq/webservices/house.php?function=list');
+$json = json_decode($json);
+?>
 <!DOCTYPE html>
 <html lang="fr">
   <head>
@@ -25,12 +29,12 @@
       <section id="menu">
         <h2>Menu</h2>
         <ul>
-          <li>Bière pression</li>
-          <li>Vin rouge, blanc et rosé</li>
-          <li>Cocktails classiques et originaux</li>
-          <li>Soft drinks</li>
-          <li>Planches apéritives</li>
-          <li>Assiettes de charcuterie et fromages</li>
+          <?php
+          foreach($json as &$val){
+            $string = "<li>" . $val->name . "</li>";
+            echo $string;
+          }
+          ?>
         </ul>
       </section>
       <section id="contact">
