@@ -1,5 +1,5 @@
 <?php
-$json = file_get_contents('https://iutdijon.u-bourgogne.fr/intra/iq/webservices/house.php?function=list');
+$json = file_get_contents("https://iutdijon.u-bourgogne.fr/intra/iq/webservices/house.php?function=list");
 $json = json_decode($json);
 ?>
 <!DOCTYPE html>
@@ -24,18 +24,47 @@ $json = json_decode($json);
     <main>
       <section id="apropos">
         <h2>À Propos</h2>
-        <p>Bienvenue au Bar Chez Nous, l'endroit idéal pour prendre un verre entre amis ou collègues. Notre bar propose une large sélection de boissons alcoolisées et non alcoolisées, ainsi que des snacks pour accompagner vos boissons.</p>
+        <p>Bienvenue au Bar Chez Nous, l"endroit idéal pour prendre un verre entre amis ou collègues. Notre bar propose une large sélection de boissons alcoolisées et non alcoolisées, ainsi que des snacks pour accompagner vos boissons.</p>
       </section>
       <section id="menu">
         <h2>Menu</h2>
-        <ul>
           <?php
+          $i = 1;
           foreach($json as &$val){
-            $string = "<li>" . $val->name . "</li>";
+            if($i == 1){
+                $string = "<div class='bloc active'>";
+                $string .= "<div class='bloc-haut'>";
+                $string .= "<div class='rond'>";
+                $string .= "<img src='beer.png' /></div>";
+                $string .= "<p class='titre-section'>". $val->name ."</p>";
+                $string .= "<div class='ligne'></div>";
+                $string .= "<p class='prix'>". $val->price."€ </p></div>";
+                $string .= "<div class='contenu'>";
+                $string .= "<img src='beer.png' alt=''>";
+                $string .= "<div class='infos'>";
+                $string .= "<h2>". $val->name ."</h2>";
+                $string .= "<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officia, et commodi earum eius ipsa, nulla molestiae iusto eligendi qui non nihil ab, rerum vel exercitationem.</p>";
+                $string .= "</div></div></div>";
+            } else {
+                $string = "<div class='bloc'>";
+                $string .= "<div class=''bloc-haut'>";
+                $string .= "<div class='rond'>";
+                $string .= "<img src='beer.png' /></div>";
+                $string .= "<p class='titre-section'>". $val->name ."</p>";
+                $string .= "<div class='ligne'></div>";
+                $string .= "<p class='prix'>". $val->price."€ </p></div>";
+                $string .= "<div class='contenu'>";
+                $string .= "<img src='beer.png' alt=''>";
+                $string .= "<div class='infos'>";
+                $string .= "<h2>". $val->name ."</h2>";
+                $string .= "<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officia, et commodi earum eius ipsa, nulla molestiae iusto eligendi qui non nihil ab, rerum vel exercitationem.</p>";
+                $string .= "</div></div></div>";
+            }
+
             echo $string;
           }
           ?>
-        </ul>
+        
       </section>
       <section id="contact">
         <h2>Contact</h2>
