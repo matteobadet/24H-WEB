@@ -105,12 +105,12 @@ body {
     width: 40px;
 }
 .bloc .ligne {
-    width: 60%;
+    width: 30%;
     height: 1px;
     border-radius: 2px;
     background: #222;
     margin: 0 5px 0 auto;
-}
+} 
 .titre-section {
     margin: 0 25px;
     font-size: 30px;

@@ -28,11 +28,28 @@ $json = json_decode($json);
       </section>
       <section id="menu">
         <h2>Menu</h2>
+        <div class="container">
           <?php
           $i = 1;
           foreach($json as &$val){
             if($i == 1){
                 $string = "<div class='bloc active'>";
+                $string .= "<div class='bloc-haut'>";
+                $string .= "<div class='rond'>";
+                $string .= "<img src='beer.png' /></div>";
+                $string .= "<p class='titre-section' style='color:red;'>". $val->name ."</p>";
+                $string .= "<div class='ligne'></div>";
+                $string .= "<p class='prix'>". $val->price."€ </p></div>";
+                $string .= "<div class='contenu'>";
+                $string .= "<img src='beer.png' alt=''>";
+                $string .= "<div class='infos'>";
+                $string .= "<h2>". $val->name ."</h2>";
+                $string .= "<h3>Type : </h3><p>".$val->type."</p>";
+                $string .= "<h3>Alcohol : </h3><p>".$val->alcohol."</p>";
+                $string .= "</div></div></div>";
+                $i+=1;
+            } else {
+                $string = "<div class='bloc'>";
                 $string .= "<div class='bloc-haut'>";
                 $string .= "<div class='rond'>";
                 $string .= "<img src='beer.png' /></div>";
@@ -43,28 +60,15 @@ $json = json_decode($json);
                 $string .= "<img src='beer.png' alt=''>";
                 $string .= "<div class='infos'>";
                 $string .= "<h2>". $val->name ."</h2>";
-                $string .= "<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officia, et commodi earum eius ipsa, nulla molestiae iusto eligendi qui non nihil ab, rerum vel exercitationem.</p>";
-                $string .= "</div></div></div>";
-            } else {
-                $string = "<div class='bloc'>";
-                $string .= "<div class=''bloc-haut'>";
-                $string .= "<div class='rond'>";
-                $string .= "<img src='beer.png' /></div>";
-                $string .= "<p class='titre-section'>". $val->name ."</p>";
-                $string .= "<div class='ligne'></div>";
-                $string .= "<p class='prix'>". $val->price."€ </p></div>";
-                $string .= "<div class='contenu'>";
-                $string .= "<img src='beer.png' alt=''>";
-                $string .= "<div class='infos'>";
-                $string .= "<h2>". $val->name ."</h2>";
-                $string .= "<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officia, et commodi earum eius ipsa, nulla molestiae iusto eligendi qui non nihil ab, rerum vel exercitationem.</p>";
+                $string .= "<h3>Type : </h3><p>".$val->type."</p>";
+                $string .= "<h3>Alcohol : </h3><p>".$val->alcohol."</p>";
                 $string .= "</div></div></div>";
             }
 
             echo $string;
           }
           ?>
-        
+        </div>
       </section>
       <section id="contact">
         <h2>Contact</h2>
@@ -78,5 +82,6 @@ $json = json_decode($json);
     <footer>
       <p>Bar Chez Nous - Tous droits réservés</p>
     </footer>
+    <script src="script.js"></script>
   </body>
 </html>
