@@ -157,3 +157,26 @@ body {
 .infos button:active {
     transform: scale(0.95);
 }
+
+.partie-en-gras {
+    font-weight: bold;
+}
+  
+#reco{
+    font-size: 30px;
+}
+
+#killElves {
+    display: flex;
+    align-items: center;
+    width: 50%; 
+    margin: 0 auto;
+    text-align: center;
+  }
+
+#killElves  img {
+    margin-right: 20px; 
+    width: 20%;
+    height: auto;
+    border-radius: 10%;
+  }

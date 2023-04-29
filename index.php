@@ -26,6 +26,12 @@ $json = json_decode($json);
         <h2>À Propos</h2>
         <p>Bienvenue au Bar Chez Nous, l"endroit idéal pour prendre un verre entre amis ou collègues. Notre bar propose une large sélection de boissons alcoolisées et non alcoolisées, ainsi que des snacks pour accompagner vos boissons.</p>
       </section>
+      <section id="Recommendation">
+        <div id="killElves">
+          <img src="Resources/kill_elves.png" alt="Kill Elves Beer"/>
+          <p id="reco">Nous vous recommandons la Bière <br/><span class="partie-en-gras">Kill Elves</span></p>
+        </div>
+      </section>
       <section id="menu">
         <h2>Menu</h2>
           <?php
