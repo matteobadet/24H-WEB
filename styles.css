@@ -66,7 +66,7 @@ body {
 
 .container {
     width: 700px;
-    height: 630px;
+    height: 780px;
     /* background: #f1f1f1; */
     margin: 100px auto;
     display: flex;
@@ -220,4 +220,28 @@ body {
 
 #menu {
     color:#333;
+}
+
+.mark{
+    display: flex;
+    margin-top: 2%;
+    margin-left: 10%;
+    margin-left: 10%;
+    align-items: center;
+}
+
+.mark img{
+    margin-right: 30px; 
+    margin-left: 0%;
+    width: 30%;
+    height: auto;
+}
+
+.buy-button {
+    background-color: #333;
+    color: whitesmoke;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
 }

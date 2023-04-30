@@ -19,6 +19,7 @@ $json = json_decode($json);
       <nav>
         <ul>
           <li><a href="#apropos">À Propos</a></li>
+          <li><a href="#recommendation">Recommendation</a></li>
           <li><a href="#menu">Menu</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
@@ -27,9 +28,9 @@ $json = json_decode($json);
     <main>
       <section id="apropos">
         <h2>À Propos</h2>
-        <p>Bienvenue au Bar Chez Nous, l"endroit idéal pour prendre un verre entre amis ou collègues. Notre bar propose une large sélection de boissons alcoolisées et non alcoolisées, ainsi que des snacks pour accompagner vos boissons.</p>
+        <p>Bienvenue au Bar Chez Nous, l"endroit idéal pour prendre un verre entre amis ou collègues. Nous vous prosons un choix divers de boissons selectionné par notre Majesté Durin.</p>
       </section>
-      <section id="Recommendation">
+      <section id="recommendation">
         <div class="center" id="killElves">
           <img src="Resources/kill_elves.png" alt="Kill Elves Beer"/>
           <p id="reco">Nous vous recommandons la Bière <br/><span class="partie-en-gras">Kill Elves</span></p>
@@ -55,7 +56,14 @@ $json = json_decode($json);
                 $string .= "<h2>". $val->name ."</h2>";
                 $string .= "<h3>Type : </h3><p>".$val->type."</p>";
                 $string .= "<h3>Alcohol : </h3><p>".$val->alcohol."</p>";
-                $string .= "</div></div></div>";
+                $string .= "</div></div>";
+                $string .= "<div class='mark'>";
+                for($j=0; $j < $val->mark; $j++) $string .= "<img src='Resources/pleine.png' alt='one star' />";
+                if ($val->mark!=5) {
+                  for($j=0; $j < 5-$val->mark; $j++) $string .= "<img src='Resources/vide.png' alt='not a star' />";
+                }
+                $string .= "<button class='buy-button'>Acheter</button>";
+                $string .= "</div></div>";
                 $i+=1;
             } else {
                 $string = "<div class='bloc'>";
@@ -71,8 +79,13 @@ $json = json_decode($json);
                 $string .= "<h2>". $val->name ."</h2>";
                 $string .= "<h3>Type : </h3><p>".$val->type."</p>";
                 $string .= "<h3>Alcohol : </h3><p>".$val->alcohol."</p>";
-                $string .= "</div></div></div>";
-            }
+                $string .= "<div class='mark'>";
+                for($j=0; $j < $val->mark; $j++) $string .= "<img src='Resources/pleine.png' alt='one star' />";
+                if ($val->mark!=5) {
+                  for($j=0; $j < 5-$val->mark; $j++) $string .= "<img src='Resources/vide.png' alt='not a star' />";
+                }
+                $string .= "</div>";            
+              }
 
             echo $string;
           }
