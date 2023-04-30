@@ -12,7 +12,7 @@ $json = json_decode($json);
   </head>
   <body>
     <header>
-      <h1>Bar Chez Nous</h1>
+    <a id="index" href="index.php"><h1>Bar Chez Nous</h1></a>
       <nav>
         <ul>
           <li><a href="#apropos">À Propos</a></li>
@@ -33,8 +33,9 @@ $json = json_decode($json);
                 }
             </style>
         </div>
-      </section>
-      <section id="contact">
+    </section>
+    <img src="Resources/nain3.png" id="nain3"/>
+    <section id="contact">
         <h2>Contact</h2>
         <p>Vous avez des questions ou des commentaires sur notre bar ? Contactez-nous par téléphone ou par e-mail :</p>
         <ul>

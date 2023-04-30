@@ -105,12 +105,12 @@ body {
     width: 40px;
 }
 .bloc .ligne {
-    width: 30%;
+    width: 60%;
     height: 1px;
     border-radius: 2px;
     background: #222;
     margin: 0 5px 0 auto;
-} 
+}
 .titre-section {
     margin: 0 25px;
     font-size: 30px;
@@ -183,5 +183,20 @@ body {
     align-items: center;
     margin: 0 auto;
     text-align: center;
+}
 
+#index{
+    color: whitesmoke;
+}
+
+#index:visited{
+    color: whitesmoke;
+}
+
+#nain3{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 10%;
+    height: auto;
 }
