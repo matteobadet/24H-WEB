@@ -12,7 +12,10 @@ $json = json_decode($json);
   </head>
   <body>
     <header>
-    <a id="index" href="index.php"><h1>Bar Chez Nous</h1></a>
+      <div id="logo">
+        <img id="logo" src="Resources/logo.png" />
+        <a id="index" href="index.php"><h1>Bar Chez Nous</h1></a>
+      </div>
       <nav>
         <ul>
           <li><a href="#apropos">À Propos</a></li>

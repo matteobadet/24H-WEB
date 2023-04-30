@@ -1,12 +1,15 @@
 /* Définition des styles globaux */
 body {
     font-family: sans-serif;
+    background-color: #333;
+    color:whitesmoke;
     margin: 0;
   }
   
   /* Styles pour l'en-tête */
   header {
-    background-color: #333;
+    /*background-color: rgb(197, 72, 0);*/
+    background-image: url("Resources/banniere.jpg");
     color: white;
     padding: 1rem;
     display: flex;
@@ -45,7 +48,7 @@ body {
   
   /* Styles pour le pied de page */
   footer {
-    background-color: #333;
+    background-color: rgb(197, 72, 0);
     color: white;
     padding: 1rem;
     text-align: center;
@@ -80,7 +83,7 @@ body {
     overflow: hidden;
 }
 .active {
-    flex-grow: 10000;
+    flex-grow: 1000;
 }
 .bloc * {
     pointer-events: none;
@@ -105,7 +108,7 @@ body {
     width: 40px;
 }
 .bloc .ligne {
-    width: 60%;
+    width: 30%;
     height: 1px;
     border-radius: 2px;
     background: #222;
@@ -158,6 +161,7 @@ body {
     transform: scale(0.95);
 }
 
+
 .partie-en-gras {
     font-weight: bold;
 }
@@ -199,4 +203,21 @@ body {
     right: 0;
     width: 10%;
     height: auto;
+}
+
+#logo {
+    display: flex;
+    align-items: center;
+    width: 50%; 
+  }
+
+#logo  img {
+    margin-right: 30px; 
+    margin-left: 0%;
+    width: 5%;
+    height: auto;
+  }
+
+#menu {
+    color:#333;
 }
